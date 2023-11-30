@@ -8,7 +8,6 @@ export const status = {
     code: 2000,
     message: "SUCCESS!",
   },
-  
 
   // error
   // common err

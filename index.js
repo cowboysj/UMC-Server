@@ -3,7 +3,8 @@ import { tempRouter } from "./src/routes/temp.route.js";
 import { response } from "./config/response.js";
 import { status } from "./config/response.status.js";
 import { userRouter } from "./src/routes/user.route.js";
-import { specs } from "./config/swagger.config.js";
+import { specs } from "./config/swagger/swagger.config.js";
+
 import SwaggerUi from "swagger-ui-express";
 
 const app = express();

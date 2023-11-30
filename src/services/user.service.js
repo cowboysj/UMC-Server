@@ -1,12 +1,12 @@
-import { BaseError } from "../../config/error";
-import { status } from "../../config/response.status";
-import { signinResponseDTO } from "../dtos/user.dto";
+import { BaseError } from "../../config/error.js";
+import { status } from "../../config/response.status.js";
+import { signinResponseDTO } from "../dtos/user.dto.js";
 import {
   addUser,
   getUser,
   getUserPreferToUserID,
   setPrefer,
-} from "../models/user.dao";
+} from "../models/user.dao.js";
 
 export const joinUser = async (body) => {
   const birth = new Date(body.birthYear, body.birthMonth, body.birthDay);

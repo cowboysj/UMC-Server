@@ -4,7 +4,7 @@ import { response } from "./config/response.js";
 import { status } from "./config/response.status.js";
 import { userRouter } from "./src/routes/user.route.js";
 import { specs } from "./config/swagger/swagger.config.js";
-
+import { storeRouter } from "./src/routes/store.route.js";
 import SwaggerUi from "swagger-ui-express";
 
 const app = express();
@@ -35,3 +35,4 @@ app.use("/api-docs", SwaggerUi.serve, SwaggerUi.setup(specs));
 // router setting
 app.use("/temp", tempRouter);
 app.use("/user", userRouter);
+app.use("/:storeId", storeRouter);

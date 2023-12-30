@@ -9,11 +9,11 @@
     "start:dist": "webpack --mode production & node ./dist/main.js",
     "start": "node main.js",
     "build": "webpack --mode production"
-    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-loader": "^9.1.3",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",

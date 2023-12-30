@@ -6,6 +6,7 @@ import { userRouter } from "./src/routes/user.route.js";
 import { specs } from "./config/swagger/swagger.config.js";
 import { storeRouter } from "./src/routes/store.route.js";
 import SwaggerUi from "swagger-ui-express";
+import { healthRoute } from "./src/routes/health.js";
 
 const app = express();
 const port = 3007;
@@ -36,3 +37,15 @@ app.use("/api-docs", SwaggerUi.serve, SwaggerUi.setup(specs));
 app.use("/temp", tempRouter);
 app.use("/user", userRouter);
 app.use("/:storeId", storeRouter);
+
+app.use("/health", healthRoute);
+
+app.get("/", (req, res, next) => {
+  res.send(response(status.SUCCESS, "루트 페이지!"));
+});
+
+// error handling
+app.use((req, res, next) => {
+  const err = new BaseError(status.NOT_FOUND);
+  next(err);
+});

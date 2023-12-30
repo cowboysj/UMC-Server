@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     # pull 요청이 dev에 merge 되었을 때 아래 steps를 실행
-    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'develop'
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
 
     runs-on: ubuntu-latest # 우분투 최신 버전으로 실행
 
@@ -35,7 +35,7 @@ jobs:
 
       # dependencies 설치, test and build
       - name: Install dependencies
-        run: npm ci # dependencies 설치 npm ci, npm install 모두 다 됨!
+        run: npm i # dependencies 설치 npm ci, npm install 모두 다 됨!
 
       - name: Run Build
         run: npm run build # 빌드
